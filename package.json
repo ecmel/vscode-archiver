@@ -2,11 +2,12 @@
     "name": "vscode-archiver",
     "displayName": "vscode-archiver",
     "description": "Make Easy Backups",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "ecmel",
     "engines": {
         "vscode": "^1.0.0"
     },
+    "homepage": "https://github.com/ecmel/vscode-archiver",
     "categories": [
         "Other"
     ],

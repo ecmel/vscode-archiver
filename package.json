@@ -8,6 +8,7 @@
         "vscode": "^1.0.0"
     },
     "homepage": "https://github.com/ecmel/vscode-archiver",
+    "bugs": "https://github.com/ecmel/vscode-archiver/issues",
     "license": "MIT",
     "categories": [
         "Other"

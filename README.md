@@ -1,8 +1,8 @@
 ## Features
 
-Provides `Archive Folder` command which archives the entire folder to a zip file.
+Provides ` Archive Folder ` command which archives the entire folder to a zip file.
 
-`.gitignore` globs are respected and not included in the archive file as well.
+` .gitignore ` globs are respected and not included in the archive file as well.
 
 
 ## Installation

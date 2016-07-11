@@ -2,7 +2,7 @@
 
 Provides `Archive Folder` command which archives the entire folder to a zip file.
 
-.gitignore globs are respected.
+`.gitignore` globs are respected and not included in the archive file as well.
 
 
 ## Installation

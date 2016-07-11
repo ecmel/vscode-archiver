@@ -1,8 +1,8 @@
 {
     "name": "vscode-archiver",
     "displayName": "Archiver",
-    "description": "Make workspace folder backups.",
-    "version": "0.0.7",
+    "description": "Workspace folder archiver",
+    "version": "0.0.8",
     "publisher": "ecmel",
     "engines": {
         "vscode": "^1.0.0"

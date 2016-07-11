@@ -2,7 +2,7 @@
     "name": "vscode-archiver",
     "displayName": "Archiver",
     "description": "Make easy backups.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "ecmel",
     "engines": {
         "vscode": "^1.0.0"

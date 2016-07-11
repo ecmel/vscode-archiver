@@ -8,7 +8,13 @@ function activate(context) {
 
     var disposable = vscode.commands.registerCommand('extension.archive', function () {
 
-        var rootPath = vscode.workspace.rootPath;
+        var rootPath = vscode.workspace.rootPath; 
+
+        if (!rootPath) {
+            vscode.window.showErrorMessage('Archiver works for folders only.');
+            return;
+        }
+
         var folder = path.basename(rootPath);
         var archivePath = path.resolve(rootPath, '..', folder + '.zip');
         var gitIgnorePath = path.resolve(rootPath, '.gitignore');

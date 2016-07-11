@@ -8,7 +8,7 @@ function activate(context) {
 
     var disposable = vscode.commands.registerCommand('extension.archive', function () {
 
-        var rootPath = vscode.workspace.rootPath; 
+        var rootPath = vscode.workspace.rootPath;
 
         if (!rootPath) {
             vscode.window.showErrorMessage('Archiver works for folders only.');

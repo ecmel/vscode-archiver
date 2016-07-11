@@ -1,8 +1,8 @@
 {
     "name": "vscode-archiver",
     "displayName": "Archiver",
-    "description": "Make easy backups.",
-    "version": "0.0.4",
+    "description": "Make workspace folder backups.",
+    "version": "0.0.5",
     "publisher": "ecmel",
     "engines": {
         "vscode": "^1.0.0"
@@ -16,7 +16,9 @@
         "archive",
         "archiver",
         "backup",
-        "zip"
+        "zip",
+        "workspace",
+        "folder"
     ],
     "preview": true,
     "icon": "icon.png",

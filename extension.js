@@ -17,19 +17,23 @@ function activate(context) {
 
         var folder = path.basename(rootPath);
         var archivePath = path.resolve(rootPath, '..', folder + '.zip');
-        var gitIgnorePath = path.resolve(rootPath, '.gitignore');
-        var ignored = [];
 
-        if (fs.existsSync(gitIgnorePath)) {
-            ignored = parse(gitIgnorePath);
-        }
-        ignored.push('.git', '.git/**');
+        var gitIgnorePath = path.resolve(rootPath, '.gitignore');
+        var ignored = parse(gitIgnorePath, ['.git', '.git/**']);
 
         var output = fs.createWriteStream(archivePath);
         var archive = archiver('zip');
 
+        var msg = vscode.window.setStatusBarMessage('Archiving to ' + archivePath);
+
         output.on('close', function () {
+            msg.dispose();
             vscode.window.showInformationMessage('Archived ' + archivePath);
+        });
+
+        archive.on('error', function (err) {
+            msg.dispose();
+            vscode.window.showErrorMessage(err.message);
         });
 
         archive.pipe(output);

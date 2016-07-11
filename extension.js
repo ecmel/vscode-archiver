@@ -24,16 +24,16 @@ function activate(context) {
         var output = fs.createWriteStream(archivePath);
         var archive = archiver('zip');
 
-        var msg = vscode.window.setStatusBarMessage('Archiving to ' + archivePath);
-
-        output.on('close', function () {
-            msg.dispose();
-            vscode.window.showInformationMessage('Archived ' + archivePath);
+        output.on('error', function (err) {
+            vscode.window.showErrorMessage(err.message);
         });
 
         archive.on('error', function (err) {
-            msg.dispose();
             vscode.window.showErrorMessage(err.message);
+        });
+
+        archive.on('end', function () {
+            vscode.window.showInformationMessage('Archived to ' + archivePath);
         });
 
         archive.pipe(output);

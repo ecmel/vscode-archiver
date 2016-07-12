@@ -19,7 +19,7 @@ function activate(context) {
         var archivePath = path.resolve(rootPath, '..', folder + '.zip');
 
         var gitIgnorePath = path.resolve(rootPath, '.gitignore');
-        var ignored = parse(gitIgnorePath, ['.git', '.git/**'], {
+        var ignored = parse(gitIgnorePath, ['.git'], {
             cache: false
         });
 

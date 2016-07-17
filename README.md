@@ -1,6 +1,6 @@
 # vscode-archiver
 
-Visual Studio Code workspace archiver.
+Workspace folder archiver.
 
 ## Features
 

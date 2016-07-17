@@ -1,46 +1,46 @@
 {
-    "name": "vscode-archiver",
-    "displayName": "Archiver",
-    "description": "Workspace folder archiver",
-    "version": "0.0.11",
-    "publisher": "ecmel",
-    "license": "MIT",
-    "homepage": "https://github.com/ecmel/vscode-archiver",
-    "bugs": "https://github.com/ecmel/vscode-archiver/issues",
-    "icon": "icon.png",
-    "engines": {
-        "vscode": "^1.0.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "keywords": [
-        "archive",
-        "backup",
-        "zip",
-        "workspace",
-        "folder"
-    ],
-    "activationEvents": [
-        "onCommand:extension.archive"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.archive",
-                "title": "Archive Folder"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "vscode": "^0.11.0"
-    },
-    "dependencies": {
-        "archiver": "1.0.0",
-        "parse-gitignore": "0.3.0"
-    }
+  "name": "vscode-archiver",
+  "displayName": "Archiver",
+  "description": "Workspace folder archiver",
+  "version": "0.0.11",
+  "publisher": "ecmel",
+  "license": "MIT",
+  "homepage": "https://github.com/ecmel/vscode-archiver",
+  "bugs": "https://github.com/ecmel/vscode-archiver/issues",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "archive",
+    "backup",
+    "zip",
+    "workspace",
+    "folder"
+  ],
+  "activationEvents": [
+    "onCommand:extension.archive"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.archive",
+        "title": "Archive Folder"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "archiver": "1.0.0",
+    "parse-gitignore": "0.3.0"
+  }
 }

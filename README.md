@@ -1,3 +1,7 @@
+# vscode-archiver
+
+Visual Studio Code workspace archiver.
+
 ## Features
 
 - Provides ` Archive Folder ` command which archives the entire workspace folder.

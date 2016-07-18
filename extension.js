@@ -20,7 +20,7 @@ function activate(context) {
     }
 
     var folder = path.basename(rootPath);
-    var archivePath = path.resolve(rootPath, '..', folder + '-' + Date.now() + '.zip');
+    var archivePath = path.resolve(rootPath, '..', folder + '_' + Date.now() + '.zip');
 
     var gitIgnorePath = path.resolve(rootPath, '.gitignore');
     var ignored = parse(gitIgnorePath, ['.git'], {

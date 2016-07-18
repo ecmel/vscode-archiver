@@ -1,3 +1,5 @@
+'use strict';
+
 // (c) 2016 Ecmel Ercan
 
 var vscode = require('vscode');
@@ -18,7 +20,7 @@ function activate(context) {
     }
 
     var folder = path.basename(rootPath);
-    var archivePath = path.resolve(rootPath, '..', folder + '.zip');
+    var archivePath = path.resolve(rootPath, '..', folder + '-' + Date.now() + '.zip');
 
     var gitIgnorePath = path.resolve(rootPath, '.gitignore');
     var ignored = parse(gitIgnorePath, ['.git'], {

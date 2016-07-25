@@ -2,7 +2,7 @@
 
 // (c) 2016 Ecmel Ercan
 
-var vscode = require('vscode');
+var vsc = require('vscode');
 var archiver = require('archiver');
 var parse = require('parse-gitignore');
 var fs = require('fs');
@@ -10,12 +10,12 @@ var path = require('path')
 
 function activate(context) {
 
-  var disposable = vscode.commands.registerCommand('extension.archive', function () {
+  var disposable = vsc.commands.registerCommand('extension.archive', function () {
 
-    var rootPath = vscode.workspace.rootPath;
+    var rootPath = vsc.workspace.rootPath;
 
     if (!rootPath) {
-      vscode.window.showErrorMessage('Archiver works for folders only.');
+      vsc.window.showErrorMessage('Archiver works for folders only.');
       return;
     }
 
@@ -31,15 +31,19 @@ function activate(context) {
     var archive = archiver('zip');
 
     output.on('error', function (err) {
-      vscode.window.showErrorMessage(err.message);
+      vsc.window.showErrorMessage(err.message);
     });
 
     archive.on('error', function (err) {
-      vscode.window.showErrorMessage(err.message);
+      vsc.window.showErrorMessage(err.message);
     });
 
     archive.on('end', function () {
-      vscode.window.showInformationMessage('Archived to ' + archivePath);
+      vsc.window.showInformationMessage('Archived to ' + archivePath);
+    });
+
+    archive.on('entry', function (entry) {
+      vsc.window.setStatusBarMessage('Archiving ' + entry.name, 1000);
     });
 
     archive.pipe(output);

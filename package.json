@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "archiver": "1.0.0",
-    "parse-gitignore": "0.3.0"
+    "parse-gitignore": "0.3.1"
   }
 }

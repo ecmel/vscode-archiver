@@ -29,21 +29,21 @@ function activate(context) {
 
     var output = fs.createWriteStream(archivePath);
     var archive = archiver('zip');
+    var msg = vsc.window.setStatusBarMessage('Archiving ' + folder + '...');
 
     output.on('error', function (err) {
+      msg.dispose();
       vsc.window.showErrorMessage(err.message);
     });
 
     archive.on('error', function (err) {
+      msg.dispose();
       vsc.window.showErrorMessage(err.message);
     });
 
     archive.on('end', function () {
+      msg.dispose();
       vsc.window.showInformationMessage('Archived to ' + archivePath);
-    });
-
-    archive.on('entry', function (entry) {
-      vsc.window.setStatusBarMessage('Archiving ' + entry.name, 1000);
     });
 
     archive.pipe(output);

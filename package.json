@@ -2,7 +2,7 @@
   "name": "vscode-archiver",
   "displayName": "Archiver",
   "description": "Workspace folder archiver",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "publisher": "ecmel",
   "license": "MIT",
   "homepage": "https://github.com/ecmel/vscode-archiver",
@@ -40,7 +40,7 @@
     "vscode": "^0.11.0"
   },
   "dependencies": {
-    "archiver": "1.0.0",
+    "archiver": "1.0.1",
     "parse-gitignore": "0.3.1"
   }
 }

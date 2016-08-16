@@ -1,4 +1,4 @@
-# vscode-archiver
+# Visual Studio Code Workspace Folder Archiver
 
 Workspace folder archiver.
 

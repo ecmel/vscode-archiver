@@ -2,7 +2,7 @@
   "name": "vscode-archiver",
   "displayName": "Archiver",
   "description": "Workspace folder archiver",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "publisher": "ecmel",
   "license": "MIT",
   "homepage": "https://github.com/ecmel/vscode-archiver",
@@ -29,7 +29,7 @@
     "commands": [
       {
         "command": "extension.archive",
-        "title": "Archive Workspace"
+        "title": "Archive Folder"
       }
     ]
   },

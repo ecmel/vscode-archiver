@@ -8,6 +8,10 @@
   "homepage": "https://github.com/ecmel/vscode-archiver",
   "bugs": "https://github.com/ecmel/vscode-archiver/issues",
   "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ecmel/vscode-archiver.git"
+  },
   "engines": {
     "vscode": "^1.0.0"
   },

@@ -5,7 +5,7 @@ Workspace folder archiver.
 ## Features
 
 - Provides ` Archive Folder ` command which archives the entire workspace folder.
-- ` .gitignore ` globs are respected.
+- Top level ` .gitignore ` globs are respected.
 
 ## Installation
 

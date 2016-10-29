@@ -2,7 +2,7 @@
   "name": "vscode-archiver",
   "displayName": "Archiver",
   "description": "Workspace folder archiver",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "publisher": "ecmel",
   "license": "MIT",
   "homepage": "https://github.com/ecmel/vscode-archiver",
@@ -13,7 +13,7 @@
     "url": "https://github.com/ecmel/vscode-archiver.git"
   },
   "engines": {
-    "vscode": "^1.0.0"
+    "vscode": "^1.5.0"
   },
   "categories": [
     "Other"
@@ -41,7 +41,12 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "vscode": "^0.11.0"
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "eslint": "^3.6.0",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
   },
   "dependencies": {
     "archiver": "1.1.0",

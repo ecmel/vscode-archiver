@@ -1,6 +1,6 @@
 'use strict';
 
-// (c) 2016 Ecmel Ercan
+// (c) 2016-2017 Ecmel Ercan
 
 var vsc = require('vscode');
 var archiver = require('archiver');

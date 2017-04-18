@@ -1,5 +1,3 @@
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/ecmel.vscode-archiver.svg)](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-archiver)
-
 # Visual Studio Code Workspace Folder Archiver
 
 Workspace folder archiver.

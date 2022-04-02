@@ -11,6 +11,6 @@ Workspace folder archiver.
 
 [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-archiver)
 
-## Buy me a coffee
+## Sponsor
 
 https://www.buymeacoffee.com/ecmel

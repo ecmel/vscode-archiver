@@ -10,7 +10,3 @@ Workspace folder archiver.
 ## Installation
 
 [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-archiver)
-
-## Sponsor
-
-https://www.buymeacoffee.com/ecmel

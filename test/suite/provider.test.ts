@@ -6,8 +6,8 @@
 import assert from "assert";
 import sinon from "sinon";
 import { afterEach, describe, it } from "mocha";
-import * as provider from "../../src/provider";
 import { window } from "vscode";
+import * as provider from "../../src/provider";
 
 afterEach(() => {
   sinon.restore();

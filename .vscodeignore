@@ -1,7 +1,11 @@
+.github/**
 .vscode/**
 .vscode-test/**
+node_modules/**
+coverage/**
+out/**
+src/**
 test/**
 .gitignore
-jsconfig.json
-vsc-extension-quickstart.md
-.eslintrc.json
+tsconfig.json
+rollup.config.js

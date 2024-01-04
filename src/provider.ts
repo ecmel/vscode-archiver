@@ -15,7 +15,7 @@ export async function archive() {
   if (folder) {
     const root = folder.uri.fsPath;
     const name = `${folder.name}_${Date.now()}.zip`;
-    const dest = path.resolve(root, name);
+    const dest = path.join(root, name);
     const output = createWriteStream(dest);
     const archive = archiver("zip");
 

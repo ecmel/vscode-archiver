@@ -34,4 +34,9 @@ describe("provider", () => {
     const files = glob.sync("/project/*.zip");
     assert.strictEqual(files.length, 1);
   });
+
+  it("should not reject if no workspace folder", async () => {
+    sinon.stub(window, "showWorkspaceFolderPick").value(async () => undefined);
+    await assert.doesNotReject(provider.archive);
+  });
 });

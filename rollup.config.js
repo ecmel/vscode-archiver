@@ -21,6 +21,12 @@ module.exports = {
     format: "commonjs",
     sourcemap: debug,
   },
+  onwarn(warning, warn) {
+    if (warning.code === "CIRCULAR_DEPENDENCY") {
+      return;
+    }
+    warn(warning);
+  },
   external: (module) => module === "vscode",
   plugins: [
     nodeResolve({ preferBuiltins: true }),

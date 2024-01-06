@@ -48,5 +48,5 @@ export async function archive() {
     archive.file(path.join(root, file), { prefix: name, name: file });
   }
 
-  await archive.finalize();
+  return archive.finalize();
 }

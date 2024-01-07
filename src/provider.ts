@@ -19,7 +19,7 @@ export async function archive() {
   const date = new Date();
   const name = folder.name;
   const root = folder.uri.fsPath;
-  const arch = `${name}_${date.toISOString().replace(/[:.]/g, "-")}.zip`;
+  const arch = `${name}_${date.toISOString().replace(/[:.Z]/g, "")}.zip`;
   const dest = path.join(root, arch);
   const output = createWriteStream(dest);
   const archive = archiver("zip");

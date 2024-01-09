@@ -28,7 +28,7 @@ module.exports = {
     }
     warn(warning);
   },
-  external: (module) => module === "vscode",
+  external: ["vscode"],
   plugins: [
     cleandir(),
     nodeResolve({ preferBuiltins: true }),

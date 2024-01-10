@@ -2,7 +2,7 @@
 
 All notable changes to the extension will be documented in this file.
 
-## [1.0.3] - 2024-02-09
+## [1.0.4] - 2024-01-10
 
 - Use readable date instead of timestamp
 - Changed activation event

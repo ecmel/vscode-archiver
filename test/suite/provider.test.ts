@@ -1,12 +1,12 @@
 /*
- * Copyright (c) 1986-2023 Ecmel Ercan (https://ecmel.dev/)
+ * Copyright (c) 1986-2024 Ecmel Ercan (https://ecmel.dev/)
  * Licensed under the MIT License
  */
 
 import assert from "assert";
 import sinon from "sinon";
 import mockfs from "mock-fs";
-import { beforeEach, afterEach, describe, it } from "mocha";
+import { describe, beforeEach, afterEach, it } from "mocha";
 import { window } from "vscode";
 import { glob } from "fast-glob";
 import * as provider from "../../src/provider";

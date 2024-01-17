@@ -2,11 +2,11 @@
 
 [![commit](https://github.com/ecmel/vscode-archiver/actions/workflows/commit.yml/badge.svg)](https://github.com/ecmel/vscode-archiver/actions/workflows/commit.yml)
 
-Workspace folder archiver.
+Archives workspace folders respecting `.gitignore` files.
 
 ## Features
 
-- Provides `Archive workspace` command which archives the entire workspace folder
+- Provides `Archive workspace folder` command which archives the entire workspace folder
 - All `.gitignore` files are respected
 - Supports multiple workspace folders
 

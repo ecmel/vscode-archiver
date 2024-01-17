@@ -2,6 +2,10 @@
 
 All notable changes to the extension will be documented in this file.
 
+## [1.0.5] - 2024-
+
+-
+
 ## [1.0.4] - 2024-01-10
 
 - Use readable date instead of timestamp

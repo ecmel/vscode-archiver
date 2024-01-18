@@ -2,6 +2,10 @@
 
 All notable changes to the extension will be documented in this file.
 
+## [1.0.6] - 2024-
+
+- Ask to exclude `.git` folder
+
 ## [1.0.5] - 2024-01-17
 
 - Update dependencies

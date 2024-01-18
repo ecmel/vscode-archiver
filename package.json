@@ -2,7 +2,7 @@
   "name": "vscode-archiver",
   "displayName": "Archiver",
   "description": "Workspace Folder Archiver",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "publisher": "ecmel",
   "author": {
@@ -27,6 +27,7 @@
     "zip",
     "workspace",
     "folder",
+    "git",
     "multi-root ready"
   ],
   "contributes": {

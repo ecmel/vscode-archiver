@@ -25,16 +25,16 @@ export async function archive() {
     ignoreFiles: [".gitignore"],
   });
 
-  const git = files.find((file) => file.startsWith(`.git${path.sep}`));
+  const git = files.find((file) => file.startsWith(".git/"));
 
   if (git) {
-    const ask = await window.showQuickPick(["Yes", "No"], {
+    const picked = await window.showQuickPick(["Yes", "No"], {
       title: "Include .git folder?",
       placeHolder: "Yes",
     });
 
-    if (ask === "No") {
-      files = files.filter((file) => !file.startsWith(`.git${path.sep}`));
+    if (picked === "No") {
+      files = files.filter((file) => !file.startsWith(".git/"));
     }
   }
 

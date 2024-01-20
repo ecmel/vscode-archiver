@@ -29,12 +29,12 @@ export async function archive() {
 
   if (git) {
     const picked = await window.showQuickPick(["Yes", "No"], {
-      title: "Include .git folder?",
+      title: "Include .git folders?",
       placeHolder: "Yes",
     });
 
     if (picked === "No") {
-      files = files.filter((file) => !file.startsWith(".git/"));
+      files = files.filter((file) => !file.includes(".git/"));
     }
   }
 

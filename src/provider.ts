@@ -63,7 +63,7 @@ export async function archive() {
 
     archive.on("end", () => {
       window.showInformationMessage(
-        `Archived ${files.length} files in ${name} to ${arch}`
+        `Archived ${files.length} files in ${name}`
       );
     });
 

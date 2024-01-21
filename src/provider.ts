@@ -42,7 +42,8 @@ export async function archive() {
   const date = new Date();
   const arch = `${name}_${date.toISOString().replace(/[:.Z]/g, "")}.zip`;
   const dest = path.join(root, arch);
-  const msg = window.setStatusBarMessage(`Archiving ${name} ...`);
+  const status = window.createStatusBarItem();
+  const timeout = setTimeout(() => status.show(), 1000);
 
   try {
     const output = createWriteStream(dest);
@@ -54,6 +55,12 @@ export async function archive() {
 
     archive.on("error", (err) =>
       window.showErrorMessage(`Failed to archive: ${err}`)
+    );
+
+    archive.on(
+      "progress",
+      (data) =>
+        (status.text = `Archiving ${name} (${data.entries.processed} of ${data.entries.total})`)
     );
 
     archive.on("end", () =>
@@ -68,6 +75,7 @@ export async function archive() {
 
     await archive.finalize();
   } finally {
-    msg.dispose();
+    clearTimeout(timeout);
+    status.dispose();
   }
 }

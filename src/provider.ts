@@ -25,7 +25,7 @@ export async function archive() {
     ignoreFiles: [".gitignore"],
   });
 
-  const git = files.find((file) => file.startsWith(".git/"));
+  const git = files.find((file) => file.includes(".git/"));
 
   if (git) {
     const picked = await window.showQuickPick(["Yes", "No"], {

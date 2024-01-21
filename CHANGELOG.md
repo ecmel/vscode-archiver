@@ -2,7 +2,7 @@
 
 All notable changes to the extension will be documented in this file.
 
-## [1.0.8] - 2024-01-20
+## [1.0.9] - 2024-01-21
 
 - Option to exclude `.git` folders
 

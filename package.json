@@ -2,7 +2,7 @@
   "name": "vscode-archiver",
   "displayName": "Archiver",
   "description": "Workspace Folder Archiver",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "publisher": "ecmel",
   "author": {
@@ -28,6 +28,7 @@
     "workspace",
     "folder",
     "git",
+    "degit",
     "multi-root ready"
   ],
   "contributes": {
@@ -86,7 +87,7 @@
     "mocha": "^10.2.0",
     "mock-fs": "^5.2.0",
     "prettier": "^2.8.8",
-    "rollup": "^4.9.5",
+    "rollup": "^4.9.6",
     "rollup-plugin-cleandir": "^2.0.0",
     "sinon": "^17.0.1",
     "tslib": "^2.6.2",

@@ -49,23 +49,23 @@ export async function archive() {
     const output = createWriteStream(dest);
     const archive = archiver("zip");
 
-    output.on("error", (err) =>
-      window.showErrorMessage(`Failed to archive: ${err}`)
-    );
+    output.on("error", (err) => {
+      window.showErrorMessage(`Failed to archive ${name}: ${err}`);
+    });
 
-    archive.on("error", (err) =>
-      window.showErrorMessage(`Failed to archive: ${err}`)
-    );
+    archive.on("error", (err) => {
+      window.showErrorMessage(`Failed to archive ${name}: ${err}`);
+    });
 
-    archive.on(
-      "progress",
-      (data) =>
-        (status.text = `Archiving ${name} (${data.entries.processed} of ${data.entries.total})`)
-    );
+    archive.on("progress", (data) => {
+      status.text = `Archiving ${name} (${data.entries.processed} of ${data.entries.total})`;
+    });
 
-    archive.on("end", () =>
-      window.showInformationMessage(`Archived ${files.length} files to ${arch}`)
-    );
+    archive.on("end", () => {
+      window.showInformationMessage(
+        `Archived ${files.length} files in ${name} to ${arch}`
+      );
+    });
 
     archive.pipe(output);
 

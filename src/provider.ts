@@ -58,7 +58,10 @@ export async function archive() {
     });
 
     archive.on("progress", (data) => {
-      status.text = `Archiving ${name} (${data.entries.processed} of ${data.entries.total})`;
+      const percent = Math.ceil(
+        (data.fs.processedBytes / data.fs.totalBytes) * 100
+      );
+      status.text = `Archiving ${name} (${percent}%)`;
     });
 
     archive.on("end", () => {
@@ -76,6 +79,6 @@ export async function archive() {
     await archive.finalize();
   } finally {
     clearTimeout(timeout);
-    status.dispose();
+    setTimeout(() => status.dispose(), 1000);
   }
 }

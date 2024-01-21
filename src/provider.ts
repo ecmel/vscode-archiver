@@ -42,26 +42,32 @@ export async function archive() {
   const date = new Date();
   const arch = `${name}_${date.toISOString().replace(/[:.Z]/g, "")}.zip`;
   const dest = path.join(root, arch);
-  const output = createWriteStream(dest);
-  const archive = archiver("zip");
+  const msg = window.setStatusBarMessage(`Archiving ${name} ...`);
 
-  output.on("error", (err) =>
-    window.showErrorMessage(`Failed to archive: ${err}`)
-  );
+  try {
+    const output = createWriteStream(dest);
+    const archive = archiver("zip");
 
-  archive.on("error", (err) =>
-    window.showErrorMessage(`Failed to archive: ${err}`)
-  );
+    output.on("error", (err) =>
+      window.showErrorMessage(`Failed to archive: ${err}`)
+    );
 
-  archive.on("end", () =>
-    window.showInformationMessage(`Archived ${files.length} files to ${arch}`)
-  );
+    archive.on("error", (err) =>
+      window.showErrorMessage(`Failed to archive: ${err}`)
+    );
 
-  archive.pipe(output);
+    archive.on("end", () =>
+      window.showInformationMessage(`Archived ${files.length} files to ${arch}`)
+    );
 
-  for (const file of files) {
-    archive.file(path.join(root, file), { prefix: name, name: file });
+    archive.pipe(output);
+
+    for (const file of files) {
+      archive.file(path.join(root, file), { prefix: name, name: file });
+    }
+
+    await archive.finalize();
+  } finally {
+    msg.dispose();
   }
-
-  await archive.finalize();
 }

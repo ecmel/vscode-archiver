@@ -6,7 +6,7 @@
 import path from "path";
 import archiver from "archiver";
 import walk from "ignore-walk";
-import { window } from "vscode";
+import { ProgressLocation, window } from "vscode";
 import { createWriteStream } from "fs";
 
 export async function archive() {
@@ -42,43 +42,42 @@ export async function archive() {
   const date = new Date();
   const arch = `${name}_${date.toISOString().replace(/[:.Z]/g, "")}.zip`;
   const dest = path.join(root, arch);
-  const status = window.createStatusBarItem();
-  const timeout = setTimeout(() => status.show(), 1000);
 
-  try {
-    const output = createWriteStream(dest);
-    const archive = archiver("zip");
+  await window.withProgress(
+    {
+      title: `Archiving ${files.length} files in ${name}`,
+      location: ProgressLocation.Window,
+      cancellable: false,
+    },
+    async (progress) => {
+      const output = createWriteStream(dest);
+      const archive = archiver("zip");
 
-    output.on("error", (err) => {
-      window.showErrorMessage(`Failed to archive ${name}: ${err}`);
-    });
+      output.on("error", (err) => {
+        window.showErrorMessage(`Failed to archive ${name}: ${err}`);
+      });
 
-    archive.on("error", (err) => {
-      window.showErrorMessage(`Failed to archive ${name}: ${err}`);
-    });
+      archive.on("error", (err) => {
+        window.showErrorMessage(`Failed to archive ${name}: ${err}`);
+      });
 
-    archive.on("progress", (data) => {
-      const percent = Math.ceil(
-        (data.fs.processedBytes / data.fs.totalBytes) * 100
-      );
-      status.text = `Archiving ${name} (${percent}%)`;
-    });
+      let previous = 0;
 
-    archive.on("end", () => {
-      window.showInformationMessage(
-        `Archived ${files.length} files in ${name}`
-      );
-    });
+      archive.on("progress", (data) => {
+        const percent = Math.ceil(
+          (data.fs.processedBytes / data.fs.totalBytes) * 100
+        );
+        progress.report({ increment: percent - previous });
+        previous = percent;
+      });
 
-    archive.pipe(output);
+      archive.pipe(output);
 
-    for (const file of files) {
-      archive.file(path.join(root, file), { prefix: name, name: file });
+      for (const file of files) {
+        archive.file(path.join(root, file), { prefix: name, name: file });
+      }
+
+      await archive.finalize();
     }
-
-    await archive.finalize();
-  } finally {
-    clearTimeout(timeout);
-    setTimeout(() => status.dispose(), 1000);
-  }
+  );
 }

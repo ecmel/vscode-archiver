@@ -32,6 +32,28 @@
     "multi-root ready"
   ],
   "contributes": {
+    "configuration": {
+      "title": "Archiver",
+      "properties": {
+        "archiver.outputPath": {
+          "type": "string",
+          "scope": "resource",
+          "description": "Relative or absolute path to archived files.",
+          "default": ""
+        },
+        "archiver.includeGitFolders": {
+          "type": "string",
+          "scope": "resource",
+          "description": "Whether to include .git folders in archive.",
+          "default": "Ask",
+          "enum": [
+            "Ask",
+            "Yes",
+            "No"
+          ]
+        }
+      }
+    },
     "commands": [
       {
         "command": "vscode-archiver.archive",

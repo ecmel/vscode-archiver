@@ -2,7 +2,7 @@
   "name": "vscode-archiver",
   "displayName": "Archiver",
   "description": "Workspace Folder Archiver",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "license": "MIT",
   "publisher": "ecmel",
   "author": {
@@ -97,7 +97,7 @@
     "@types/ignore-walk": "^4.0.3",
     "@types/mocha": "^10.0.6",
     "@types/mock-fs": "^4.13.4",
-    "@types/node": "^20.11.7",
+    "@types/node": "^20.11.10",
     "@types/sinon": "^17.0.3",
     "@types/vscode": "^1.75.0",
     "@vscode/test-electron": "^2.3.9",

@@ -2,10 +2,11 @@
 
 All notable changes to the extension will be documented in this file.
 
-## [1.0.10] - 2024-02-23
+## [1.0.11] - 2024-01-29
 
 - Add file progress for long running archives
 - Add workspace settings for archive path and option to exclude `.git` folders
+- Update dependencies
 
 ## [1.0.5] - 2024-01-17
 

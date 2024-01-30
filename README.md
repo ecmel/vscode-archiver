@@ -9,6 +9,7 @@ Archives workspace folders respecting `.gitignore` files.
 - Provides `Archive workspace folder` command which archives the entire workspace folder
 - All `.gitignore` files are respected
 - Option to exclude `.git` folders
+- Option to select destination folder for created archives
 - Supports multiple workspace folders
 
 ## Installation

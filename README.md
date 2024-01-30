@@ -12,6 +12,11 @@ Archives workspace folders respecting `.gitignore` files.
 - Option to select destination folder for created archives
 - Supports multiple workspace folders
 
+## Sponsor
+
+- [Github Sponsors](https://github.com/sponsors/ecmel)
+- [Buy me a coffee](https://www.buymeacoffee.com/ecmel)
+
 ## Installation
 
 [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-archiver)

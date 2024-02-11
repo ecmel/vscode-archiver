@@ -2,6 +2,11 @@
 
 All notable changes to the extension will be documented in this file.
 
+## [1.1.1] - 2024-03-01
+
+- Updated dependencies
+- Ported config to typescript
+
 ## [1.1.0] - 2024-01-30
 
 - Add file progress for long running archives

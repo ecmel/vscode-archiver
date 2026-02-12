@@ -8,6 +8,6 @@ src/**
 test/**
 .gitignore
 tsconfig.json
-rollup.config.js
+rollup.config.ts
 *.zip
 

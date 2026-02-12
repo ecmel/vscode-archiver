@@ -2,6 +2,10 @@
 
 All notable changes to the extension will be documented in this file.
 
+## [1.1.2] - 2026-02-12
+
+- Updated dependencies
+
 ## [1.1.1] - 2024-03-01
 
 - Updated dependencies
